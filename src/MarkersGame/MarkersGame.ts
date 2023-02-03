@@ -1,5 +1,6 @@
 import { Marker } from "../Marker/Marker";
 import { Rule } from "../Marker/Rules/Rule";
+import { Color } from "../Marker/types/color.enum";
 import { MarkerBag } from "../MarkerBag/MarkerBag";
 
 export class MarkersGame {
@@ -14,6 +15,7 @@ export class MarkersGame {
 
 	setupNewGame(): void {
 		console.log("Welcome to the colored markers game! Let's start! 😄");
+		console.log("--------------------");
 		console.log("Generating markers...");
 
 		this.markerBag = new MarkerBag();
@@ -21,10 +23,14 @@ export class MarkersGame {
 		this.gameRunning = true;
 
 		console.log("Markers generated! 🎉");
+		console.log("--------------------");
 	}
 
 	playGame(): void {
 		this.setupNewGame();
+
+		console.log("Let the game begin! 🎲");
+		console.log("--------------------");
 
 		while (this.gameRunning) {
 			const pickedMarker = this.markerBag.pickRandomMarker();
@@ -49,9 +55,11 @@ export class MarkersGame {
 				.reduce((total, marker) => total + marker.value, 0);
 
 			if (whiteMarkersValue > 7) {
+				console.log("--------------------");
 				console.log(
 					"The value of the white markers exceeds 7 so the game is over! 😢"
 				);
+				console.log("--------------------");
 				this.gameOver();
 			}
 		}
@@ -72,7 +80,13 @@ export class MarkersGame {
 		console.log("Your picked markers:");
 
 		this.pickedMarkers.forEach((marker) => {
-			console.log(`- ${marker.color} marker with value ${marker.value}! 🎨`);
+			console.log(
+				`- One ${marker.color}${
+					marker.color === Color.Ruby ? "" : " marker"
+				} with value ${marker.value}! ${
+					marker.color === Color.Ruby ? "💎" : "🎨"
+				}`
+			);
 		});
 	}
 }

@@ -27,6 +27,6 @@ export class RubyRule implements Rule {
 
 	handleRule(pickedMarkers: Marker[], _: MarkerBag): void {
 		pickedMarkers.push(new Marker(Color.Ruby, 5));
-		console.log("Added a Ruby marker to the picked markers! 💎");
+		console.log("Added a Ruby to the picked markers! 💎");
 	}
 }
