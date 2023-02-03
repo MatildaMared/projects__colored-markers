@@ -8,6 +8,10 @@ export class WhiteMarkerAfterYellowRule implements Rule {
 		const lastMarker = pickedMarkers[pickedMarkers.length - 1];
 		const secondLastMarker = pickedMarkers[pickedMarkers.length - 2];
 
+		if (secondLastMarker === undefined) {
+			return false;
+		}
+
 		const ruleApplies =
 			lastMarker.color === Color.Yellow &&
 			secondLastMarker.color === Color.White;
