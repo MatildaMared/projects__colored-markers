@@ -2,6 +2,7 @@ import { describe, it, expect } from "vitest";
 import { RubyRule } from "./RubyRule";
 import { Marker } from "../Marker/Marker";
 import { Color } from "../types/color.enum";
+import { MarkerBag } from "../MarkerBag/MarkerBag";
 
 describe("RubyRule class", () => {
 	describe("applyRule method", () => {
@@ -48,5 +49,26 @@ describe("RubyRule class", () => {
 
 			expect(actual).toBe(expected);
 		});
-	});
+  });
+  
+  describe("handleRule method", () => {
+    it("should add a Ruby marker to the picked markers", () => {
+      const rule = new RubyRule();
+
+      const pickedMarkers = [
+        new Marker(Color.Orange, 1),
+        new Marker(Color.White, 3),
+        new Marker(Color.Yellow, 2),
+      ];
+
+      const markerBag = new MarkerBag();
+
+      rule.handleRule(pickedMarkers, markerBag);
+
+      const actual = pickedMarkers[pickedMarkers.length - 1];
+      const expected = new Marker(Color.Ruby, 5);
+
+      expect(actual).toEqual(expected);
+    });
+  })
 });
