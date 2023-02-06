@@ -1,5 +1,5 @@
-import { MarkerBag } from "../../MarkerBag/MarkerBag";
-import { Marker } from "../Marker";
+import { MarkerBag } from "../MarkerBag/MarkerBag";
+import { Marker } from "../Marker/Marker";
 import { Rule } from "./Rule";
 
 export class WhiteMarkersAboveNineRule implements Rule {

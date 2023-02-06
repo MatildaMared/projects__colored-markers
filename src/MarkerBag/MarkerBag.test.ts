@@ -1,6 +1,6 @@
 import { describe, expect, it } from "vitest";
 import { Marker } from "../Marker/Marker";
-import { Color } from "../Marker/types/color.enum";
+import { Color } from "../types/color.enum";
 import { MarkerBag } from "./MarkerBag";
 
 describe("MarkerBag class", () => {

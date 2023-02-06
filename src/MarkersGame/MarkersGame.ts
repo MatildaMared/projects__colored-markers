@@ -1,6 +1,6 @@
 import { Marker } from "../Marker/Marker";
-import { Rule } from "../Marker/Rules/Rule";
-import { Color } from "../Marker/types/color.enum";
+import { Rule } from "../Rules/Rule";
+import { Color } from "../types/color.enum";
 import { MarkerBag } from "../MarkerBag/MarkerBag";
 
 export class MarkersGame {

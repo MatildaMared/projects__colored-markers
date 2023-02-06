@@ -1,5 +1,5 @@
-import { MarkerBag } from "../../MarkerBag/MarkerBag";
-import { Marker } from "../Marker";
+import { MarkerBag } from "../MarkerBag/MarkerBag";
+import { Marker } from "../Marker/Marker";
 import { Color } from "../types/color.enum";
 import { Rule } from "./Rule";
 

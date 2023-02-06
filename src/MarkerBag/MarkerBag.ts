@@ -1,5 +1,5 @@
 import { Marker } from "../Marker/Marker";
-import { Color } from "../Marker/types/color.enum";
+import { Color } from "../types/color.enum";
 
 export class MarkerBag {
 	private markers: Marker[] = [];
